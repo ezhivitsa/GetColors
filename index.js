@@ -10,7 +10,7 @@ var reg = /class=\"color-description\"\>\s.+\<strong\>(.*)\<\/strong\>/;
 var result = {};
 var doneNum = 0;
 var start = 25*16*16*16;
-var numReq = 26*16*16*16;
+var numReq = 50*16*16*16;
 var doParallel = 60;
 
 function getColor(color) {
