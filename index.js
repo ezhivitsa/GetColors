@@ -10,8 +10,8 @@ var reg = /class=\"color-description\"\>\s.+\<strong\>(.*)\<\/strong\>/;
 var result = {};
 var doneNum = 0;
 var start = 25*16*16*16;
-var numReq = 50*16*16*16;
-var doParallel = 60;
+var numReq = 500*16*16*16;
+var doParallel = 100;
 
 function getColor(color) {
 	var hexColor = color.toString(16);
@@ -85,7 +85,7 @@ function makeIntervals(colors) {
 function writeResult() {
 	var res = JSON.stringify(result.sort((a,b) => parseInt(a.start, 16) - parseInt(b.start, 16)));
 	// var res = JSON.stringify(result);
-	fs.appendFile(__dirname + '/public/result.html', res, function (err) {
+	fs.appendFile(__dirname + '/public/result.json', res, function (err) {
 		if (err) throw err;
 		log('It\'s saved!');
 	});
@@ -97,7 +97,7 @@ function clearLog () {
 
 function log () {
 	var text = Array.prototype.join.call(arguments, '');
-	fs.appendFile(__dirname + '/public/log.html', text + '\n', function () {
+	fs.appendFile(__dirname + '/public/log.html', '<div>' + text + '</div>', function () {
 		console.log(text);
 	});
 } 
