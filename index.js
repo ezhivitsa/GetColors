@@ -9,8 +9,8 @@ var reg = /class=\"color-description\"\>\s.+\<strong\>(.*)\<\/strong\>/;
 
 var result = {};
 var doneNum = 0;
-var start = 124*16*16*16*16;
-var numReq = 128*16*16*16*16;
+var start = 128*16*16*16*16;
+var numReq = 132*16*16*16*16;
 var doParallel = 100;
 
 function getColor(color) {
