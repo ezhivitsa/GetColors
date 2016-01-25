@@ -1,7 +1,7 @@
 'use strict';
 const fs = require('fs');
 const colors = require('./public/result');
-const base64Img = require('base64-img');
+// const base64Img = require('base64-img');
 
 let colorNames = {};
 colors.forEach(function (color) {
