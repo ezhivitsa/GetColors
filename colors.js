@@ -6,9 +6,10 @@ const colors = require('./public/result');
 let colorNames = {};
 colors.forEach(function (color) {
 	if ( !colorNames[color.name] ) {
-		base64Img.requestBase64('http://www.colorhexa.com/' + color.start + '.png', function(err, res, body) {
-			colorNames[color.name] = body;
-		});
+		// base64Img.requestBase64('http://www.colorhexa.com/' + color.start + '.png', function(err, res, body) {
+		// 	colorNames[color.name] = body;
+		// });
+		colorNames[color.name] = color.start;
 	}
 });
 
