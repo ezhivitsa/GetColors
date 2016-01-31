@@ -5,12 +5,12 @@ var http = require('http');
 var express = require('express');
 var app = express();
 
-var reg = /class=\"color-description\"\>\s.+\<strong\>(.*)\<\/strong\>/;
+var reg = /class=\"color-description\"\>.+\<strong\>(.*)\<\/strong\>/;
 
 var result = {};
 var doneNum = 0;
-var start = 224*16*16*16*16;
-var numReq = 16*16*16*16*16*16 - 1;
+var start = 0;
+var numReq = 16*16*16*16;
 var doParallel = 100;
 
 function getColor(color) {
@@ -24,7 +24,7 @@ function getColor(color) {
 }
 
 function doRequest (resColor, done) {
-	request.get('http://www.colorhexa.com/' + resColor, { timeout: 100000 }, function (error, response, body) {
+	request.get('http://www.beautycolorcode.com/' + resColor, { timeout: 100000 }, function (error, response, body) {
 		if (!error && response.statusCode == 200) {
 			var desc = body.match(reg)[1];
 			result[desc] = result[desc] || [];
