@@ -11,7 +11,7 @@ var result = {};
 var doneNum = 0;
 var start = 0;
 var numReq = 16*16*16*16;
-var doParallel = 100;
+var doParallel = 50;
 
 function getColor(color) {
 	var hexColor = color.toString(16);
